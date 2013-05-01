@@ -30,36 +30,27 @@ public class DimensionEnhanced
 	
 	
 	
-	public static final CreativeTabs tab = new DimensionEnhancedCreativeTab(CreativeTabs.getNextID(), Util.MOD_ID);
+	
 	
 	
 	
 	@PreInit
 	public void PreInit(FMLPreInitializationEvent event) 
 	{
-		LoggerHandler.init();		
-		LoggerHandler.log(Level.INFO, "Pre Initialization Started");		
-		ConfigHandler.initConfig(event);		
-		LoggerHandler.log(Level.INFO, "Pre Initialization Completed");
-		
+		proxy.preInit(event);		
 	}
 
 	@Init
 	public void Init(FMLInitializationEvent event) 
 	{
-		LoggerHandler.log(Level.INFO, "Initialization Started");
-		proxy.registerRenderInformation();		
-		BlockHandler.init();
-		DimensionHandler.init();      
-		LoggerHandler.log(Level.INFO, "Initialization Completed");
+		proxy.init(event);
 
 	}
 	
 	@PostInit
 	public void postInit(FMLPostInitializationEvent event) 
 	{
-		LoggerHandler.log(Level.INFO, "Post Initialization Started");		
-		LoggerHandler.log(Level.INFO, "Post Initialization Completed");
+	
 	}
 
 }

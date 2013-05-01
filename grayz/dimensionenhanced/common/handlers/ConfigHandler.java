@@ -23,6 +23,7 @@ public class ConfigHandler
         
         InitConfigBlocks(config);
         InitConfigItems(config);
+        DimensionHandler.initDimensionsConfig(event, config);
         config.save();
     }
     

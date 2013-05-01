@@ -2,6 +2,7 @@ package grayz.dimensionenhanced.common.block;
 
 import grayz.dimensionenhanced.common.DimensionEnhanced;
 import grayz.dimensionenhanced.common.handlers.BlockHandler;
+import grayz.dimensionenhanced.common.handlers.TabHandler;
 import grayz.dimensionenhanced.lib.Util;
 
 import java.util.Random;
@@ -21,7 +22,7 @@ public class BlockEnderGrass extends Block
     {
         super(par1, Material.ground);
         setTickRandomly(true);
-        setCreativeTab(DimensionEnhanced.tab);
+        setCreativeTab(TabHandler.tab);
     }
 
     @SideOnly(Side.CLIENT)

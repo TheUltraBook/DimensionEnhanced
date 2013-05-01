@@ -285,14 +285,14 @@ public class TeleporterEnder extends Teleporter
         }
 
         --var3;
-        var1.setBlock(var2 + 0, var3 + 0, var4 + 1, Block.blockSnow.blockID);
-        var1.setBlock(var2 + 1, var3 + 0, var4 + 1, Block.blockSnow.blockID);
-        var1.setBlock(var2 + 2, var3 + 0, var4 + 1, Block.blockSnow.blockID);
-        var1.setBlock(var2 - 1, var3 + 0, var4 + 1, Block.blockSnow.blockID);
-        var1.setBlock(var2 + 0, var3 + 0, var4 + 2, Block.blockSnow.blockID);
-        var1.setBlock(var2 + 1, var3 + 0, var4 + 2, Block.blockSnow.blockID);
-        var1.setBlock(var2 + 0, var3 + 0, var4 + 0, Block.blockSnow.blockID);
-        var1.setBlock(var2 + 1, var3 + 0, var4 + 0, Block.blockSnow.blockID);
+        var1.setBlock(var2 + 0, var3 + 0, var4 + 1, BlockHandler.compressedEnder.blockID);
+        var1.setBlock(var2 + 1, var3 + 0, var4 + 1, BlockHandler.compressedEnder.blockID);
+        var1.setBlock(var2 + 2, var3 + 0, var4 + 1, BlockHandler.compressedEnder.blockID);
+        var1.setBlock(var2 - 1, var3 + 0, var4 + 1, BlockHandler.compressedEnder.blockID);
+        var1.setBlock(var2 + 0, var3 + 0, var4 + 2, BlockHandler.compressedEnder.blockID);
+        var1.setBlock(var2 + 1, var3 + 0, var4 + 2, BlockHandler.compressedEnder.blockID);
+        var1.setBlock(var2 + 0, var3 + 0, var4 + 0, BlockHandler.compressedEnder.blockID);
+        var1.setBlock(var2 + 1, var3 + 0, var4 + 0, BlockHandler.compressedEnder.blockID);
 
         for (int var5 = -1; var5 <= 2; ++var5)
         {
@@ -311,15 +311,15 @@ public class TeleporterEnder extends Teleporter
         var1.setBlock(var2 + 1, var3 + 2, var4 + 1, BlockHandler.enderPortal.blockID);
         var1.setBlock(var2 + 0, var3 + 3, var4 + 1, BlockHandler.enderPortal.blockID);
         var1.setBlock(var2 + 1, var3 + 3, var4 + 1, BlockHandler.enderPortal.blockID);
-        var1.setBlock(var2 - 1, var3 + 1, var4 + 1, Block.blockSnow.blockID);
-        var1.setBlock(var2 + 2, var3 + 1, var4 + 1, Block.blockSnow.blockID);
-        var1.setBlock(var2 - 1, var3 + 2, var4 + 1, Block.blockSnow.blockID);
-        var1.setBlock(var2 + 2, var3 + 2, var4 + 1, Block.blockSnow.blockID);
-        var1.setBlock(var2 - 1, var3 + 3, var4 + 1, Block.blockSnow.blockID);
-        var1.setBlock(var2 + 2, var3 + 3, var4 + 1, Block.blockSnow.blockID);
-        var1.setBlock(var2 + 0, var3 + 4, var4 + 1, Block.blockSnow.blockID);
-        var1.setBlock(var2 + 1, var3 + 4, var4 + 1, Block.blockSnow.blockID);
-        var1.setBlock(var2 + 2, var3 + 4, var4 + 1, Block.blockSnow.blockID);
-        var1.setBlock(var2 - 1, var3 + 4, var4 + 1, Block.blockSnow.blockID);
+        var1.setBlock(var2 - 1, var3 + 1, var4 + 1, BlockHandler.compressedEnder.blockID);
+        var1.setBlock(var2 + 2, var3 + 1, var4 + 1, BlockHandler.compressedEnder.blockID);
+        var1.setBlock(var2 - 1, var3 + 2, var4 + 1, BlockHandler.compressedEnder.blockID);
+        var1.setBlock(var2 + 2, var3 + 2, var4 + 1, BlockHandler.compressedEnder.blockID);
+        var1.setBlock(var2 - 1, var3 + 3, var4 + 1, BlockHandler.compressedEnder.blockID);
+        var1.setBlock(var2 + 2, var3 + 3, var4 + 1, BlockHandler.compressedEnder.blockID);
+        var1.setBlock(var2 + 0, var3 + 4, var4 + 1, BlockHandler.compressedEnder.blockID);
+        var1.setBlock(var2 + 1, var3 + 4, var4 + 1, BlockHandler.compressedEnder.blockID);
+        var1.setBlock(var2 + 2, var3 + 4, var4 + 1, BlockHandler.compressedEnder.blockID);
+        var1.setBlock(var2 - 1, var3 + 4, var4 + 1, BlockHandler.compressedEnder.blockID);
     }
 }

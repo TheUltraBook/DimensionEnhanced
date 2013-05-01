@@ -2,7 +2,9 @@ package grayz.dimensionenhanced.common.block;
 
 import grayz.dimensionenhanced.common.DimensionEnhanced;
 import grayz.dimensionenhanced.common.dimension.TeleporterEnder;
+import grayz.dimensionenhanced.common.handlers.BlockHandler;
 import grayz.dimensionenhanced.common.handlers.DimensionHandler;
+import grayz.dimensionenhanced.common.handlers.TabHandler;
 import grayz.dimensionenhanced.lib.Util;
 
 import java.util.Random;
@@ -19,7 +21,7 @@ public class BlockEnderPortal extends BlockPortal
 	public BlockEnderPortal(int id)
 	{
 		super(id);
-		this.setCreativeTab(DimensionEnhanced.tab);
+		this.setCreativeTab(TabHandler.tab);
 	}
 	
 		
@@ -40,9 +42,9 @@ public class BlockEnderPortal extends BlockPortal
 			if (par5Entity instanceof EntityPlayerMP)
 			{
 				EntityPlayerMP thePlayer = (EntityPlayerMP) par5Entity;
-				if (par5Entity.dimension != DimensionHandler.enderDimension)
+				if (par5Entity.dimension != DimensionHandler.enderID)
 				{
-					thePlayer.mcServer.getConfigurationManager().transferPlayerToDimension(thePlayer, DimensionHandler.enderDimension, new TeleporterEnder(thePlayer.mcServer.worldServerForDimension(DimensionHandler.enderDimension)));
+					thePlayer.mcServer.getConfigurationManager().transferPlayerToDimension(thePlayer, DimensionHandler.enderID, new TeleporterEnder(thePlayer.mcServer.worldServerForDimension(DimensionHandler.enderID)));
 				}
 				else
 				{
@@ -60,12 +62,12 @@ public class BlockEnderPortal extends BlockPortal
         byte b0 = 0;
         byte b1 = 0;
 
-        if (par1World.getBlockId(par2 - 1, par3, par4) == Block.obsidian.blockID || par1World.getBlockId(par2 + 1, par3, par4) == Block.obsidian.blockID)
+        if (par1World.getBlockId(par2 - 1, par3, par4) == BlockHandler.compressedEnder.blockID || par1World.getBlockId(par2 + 1, par3, par4) == BlockHandler.compressedEnder.blockID)
         {
             b0 = 1;
         }
 
-        if (par1World.getBlockId(par2, par3, par4 - 1) == Block.obsidian.blockID || par1World.getBlockId(par2, par3, par4 + 1) == Block.obsidian.blockID)
+        if (par1World.getBlockId(par2, par3, par4 - 1) == BlockHandler.compressedEnder.blockID || par1World.getBlockId(par2, par3, par4 + 1) == BlockHandler.compressedEnder.blockID)
         {
             b1 = 1;
         }
@@ -97,7 +99,7 @@ public class BlockEnderPortal extends BlockPortal
 
                         if (flag)
                         {
-                            if (j1 != Block.obsidian.blockID)
+                            if (j1 != BlockHandler.compressedEnder.blockID)
                             {
                                 return false;
                             }
@@ -144,7 +146,7 @@ public class BlockEnderPortal extends BlockPortal
             ;
         }
 
-        if (par1World.getBlockId(par2, i1 - 1, par4) != Block.obsidian.blockID)
+        if (par1World.getBlockId(par2, i1 - 1, par4) != BlockHandler.compressedEnder.blockID)
         {
             par1World.setBlockToAir(par2, par3, par4);
         }
@@ -157,7 +159,7 @@ public class BlockEnderPortal extends BlockPortal
                 ;
             }
 
-            if (j1 == 3 && par1World.getBlockId(par2, i1 + j1, par4) == Block.obsidian.blockID)
+            if (j1 == 3 && par1World.getBlockId(par2, i1 + j1, par4) == BlockHandler.compressedEnder.blockID)
             {
                 boolean flag = par1World.getBlockId(par2 - 1, par3, par4) == this.blockID || par1World.getBlockId(par2 + 1, par3, par4) == this.blockID;
                 boolean flag1 = par1World.getBlockId(par2, par3, par4 - 1) == this.blockID || par1World.getBlockId(par2, par3, par4 + 1) == this.blockID;
@@ -168,7 +170,7 @@ public class BlockEnderPortal extends BlockPortal
                 }
                 else
                 {
-                    if ((par1World.getBlockId(par2 + b0, par3, par4 + b1) != Block.obsidian.blockID || par1World.getBlockId(par2 - b0, par3, par4 - b1) != this.blockID) && (par1World.getBlockId(par2 - b0, par3, par4 - b1) != Block.obsidian.blockID || par1World.getBlockId(par2 + b0, par3, par4 + b1) != this.blockID))
+                    if ((par1World.getBlockId(par2 + b0, par3, par4 + b1) != BlockHandler.compressedEnder.blockID || par1World.getBlockId(par2 - b0, par3, par4 - b1) != this.blockID) && (par1World.getBlockId(par2 - b0, par3, par4 - b1) != BlockHandler.compressedEnder.blockID || par1World.getBlockId(par2 + b0, par3, par4 + b1) != this.blockID))
                     {
                         par1World.setBlockToAir(par2, par3, par4);
                     }

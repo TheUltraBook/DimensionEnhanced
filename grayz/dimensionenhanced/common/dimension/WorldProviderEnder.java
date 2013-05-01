@@ -1,6 +1,5 @@
 package grayz.dimensionenhanced.common.dimension;
 
-import grayz.dimensionenhanced.common.DimensionEnhanced;
 import grayz.dimensionenhanced.common.handlers.DimensionHandler;
 import net.minecraft.world.WorldProvider;
 import net.minecraft.world.biome.BiomeGenBase;
@@ -11,8 +10,8 @@ public class WorldProviderEnder extends WorldProvider
 {
     public void registerWorldChunkManager()
     {
-        this.worldChunkMgr = new WorldChunkManagerHell(BiomeGenBase.beach, 0.8F, 0.1F);
-        this.dimensionId = DimensionHandler.enderDimension;
+        this.worldChunkMgr = new WorldChunkManagerHell(BiomeGenBase.desert, 0.8F, 0.1F);
+        this.dimensionId = DimensionHandler.enderID;
     }
     
     
@@ -23,7 +22,26 @@ public class WorldProviderEnder extends WorldProvider
     
     public boolean canRespawnHere()
     {
-        return true;
+        return false;
+    }
+    
+    public String getSaveFolder()
+    {
+        return "Ender";
+    }
+    
+  
+    
+    public boolean isSurfaceWorld()
+    {
+        return false;
+    }
+    
+    
+        
+    public float calculateCelestialAngle(long var1, float var3)
+    {
+        return 0.5F;
     }
     
     @Override

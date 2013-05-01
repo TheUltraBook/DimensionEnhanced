@@ -1,6 +1,7 @@
 package grayz.dimensionenhanced.common.block;
 
 import grayz.dimensionenhanced.common.DimensionEnhanced;
+import grayz.dimensionenhanced.common.handlers.TabHandler;
 import grayz.dimensionenhanced.lib.Util;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -14,7 +15,7 @@ public class DimensionEnhancedBlock extends Block
     public DimensionEnhancedBlock(int par1, Material material)
     {
         super(par1, material);
-        setCreativeTab(DimensionEnhanced.tab);
+        setCreativeTab(TabHandler.tab);
         
     }
 
