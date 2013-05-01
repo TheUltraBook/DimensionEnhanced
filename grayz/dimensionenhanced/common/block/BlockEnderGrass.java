@@ -10,6 +10,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.util.Icon;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -25,6 +26,11 @@ public class BlockEnderGrass extends Block
 
     @SideOnly(Side.CLIENT)
     private Icon sides, bottom, top;
+    
+    public Icon getIcon(int par1, int par2)
+    {
+        return par1 == 1 ? this.top : (par1 == 0 ? this.bottom : this.sides);
+    }
 
     public void updateTick(World par1World, int par2, int par3, int par4, Random par5Random)
     {
@@ -68,26 +74,26 @@ public class BlockEnderGrass extends Block
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister par1IconRegister)
     {
-        this.sides  = par1IconRegister.registerIcon(Util.MOD_ID + ":" + this.getUnlocalizedName2() + "Side");
-        this.bottom = par1IconRegister.registerIcon(Util.MOD_ID + ":" + this.getUnlocalizedName2() + "Bottom");
-        this.top    = par1IconRegister.registerIcon(Util.MOD_ID + ":" + this.getUnlocalizedName2() + "Top");
+        this.sides  = par1IconRegister.registerIcon(Util.MOD_ID + ":" + this.getUnlocalizedName().substring(5) + "Side");
+        this.bottom = par1IconRegister.registerIcon(Util.MOD_ID + ":" + this.getUnlocalizedName().substring(5) + "Bottom");
+        this.top    = par1IconRegister.registerIcon(Util.MOD_ID + ":" + this.getUnlocalizedName().substring(5) + "Top");
     }
 
     @SideOnly(Side.CLIENT)
-    public Icon getBlockTextureFromSideAndMetadata(int i, int j)
+    public Icon getBlockTexture(IBlockAccess par1IBlockAccess, int par2, int par3, int par4, int par5)
     {
-            if (i == 0)
-            {
-                    return bottom;
-            }
-            if (i == 1)
-            {
-                    return top;
-            }
-            else
-            {
-                    return sides;
-            }
+        if (par5 == 1)
+        {
+            return this.top;
+        }
+        else if (par5 == 0)
+        {
+            return this.bottom;
+        }
+        else
+        {
+            return this.sides;
+        }
     }
     public int quantityDropped(int par1, int par2)
     {

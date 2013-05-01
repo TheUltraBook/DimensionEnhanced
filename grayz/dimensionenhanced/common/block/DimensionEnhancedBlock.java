@@ -21,6 +21,6 @@ public class DimensionEnhancedBlock extends Block
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister par1IconRegister)
     {
-        this.blockIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + this.getUnlocalizedName2());
+        this.blockIcon = par1IconRegister.registerIcon(Util.MOD_ID + ":" + this.getUnlocalizedName().substring(5));
     }
 }
